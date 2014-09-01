@@ -5,7 +5,7 @@
   <version>3.5.1-SNAPSHOT</version>
   <packaging>jar</packaging>
   <description>Provides read/write access to the Minecraft protocol.</description>
-  
+
   <properties>
     <project.build.sourceEncoding>cp1252</project.build.sourceEncoding>
     <powermock.version>1.5</powermock.version>
@@ -22,7 +22,7 @@
             <url>https://repo.oc.tc/content/repositories/snapshots</url>
         </snapshotRepository>
     </distributionManagement>
- 
+
   <repositories>
     <repository>
       <id>bukkit-rep</id>
@@ -34,7 +34,7 @@
       <url>http://repo.comphenix.net/content/repositories/releases/</url>
     </repository>
   </repositories>
- 
+
   <build>
     <defaultGoal>clean install</defaultGoal>
     <sourceDirectory>src/main/java</sourceDirectory>
@@ -48,7 +48,7 @@
         </excludes>
       </resource>
     </resources>
-    
+
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -70,7 +70,7 @@
                   <shadedPattern>com.comphenix.net.sf</shadedPattern>
                 </relocation>
               </relocations>
-              
+
               <artifactSet>
                 <excludes>
                   <exclude>org.bukkit:craftbukkit</exclude>
@@ -81,7 +81,7 @@
           </execution>
         </executions>
       </plugin>
-      
+
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>2.3.2</version>
@@ -110,7 +110,7 @@
 	  </plugin>
     </plugins>
   </build>
-  
+
   <reporting>
     <plugins>
       <plugin>
@@ -124,7 +124,7 @@
       </plugin>
     </plugins>
   </reporting>
-  
+
   <profiles>
   <profile>
     <id>release-sign-artifacts</id>
@@ -149,7 +149,7 @@
             </execution>
           </executions>
         </plugin>
-      
+
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
@@ -163,7 +163,7 @@
             </execution>
           </executions>
         </plugin>
-            
+
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-gpg-plugin</artifactId>
@@ -178,21 +178,21 @@
             </execution>
           </executions>
         </plugin>
-        
+
       </plugins>
     </build>
   </profile>
   </profiles>
-  
+
   <url>http://dev.bukkit.org/server-mods/protocollib/</url>
   <name>ProtocolLib</name>
-  
+
   <scm>
     <connection>scm:git:git://github.com/aadnk/ProtocolLib.git</connection>
     <developerConnection>scm:git:git@github.com:aadnk/ProtocolLib.git</developerConnection>
     <url>https://github.com/aadnk/ProtocolLib</url>
   </scm>
-  
+
   <licenses>
     <license>
       <name>GNU GENERAL PUBLIC LICENSE - Version 2, June 1991</name>
@@ -200,7 +200,7 @@
       <distribution>repo</distribution>
     </license>
   </licenses>
-  
+
   <developers>
     <developer>
       <id>aadnk</id>
@@ -214,7 +214,7 @@
       <timezone>1</timezone>
     </developer>
   </developers>
-  
+
   <dependencies>
   	<dependency>
   		<groupId>cglib</groupId>
@@ -263,6 +263,6 @@
 		<artifactId>powermock-api-mockito</artifactId>
 		<version>${powermock.version}</version>
 		<scope>test</scope>
-	</dependency> 
+	</dependency>
   </dependencies>
 </project>
