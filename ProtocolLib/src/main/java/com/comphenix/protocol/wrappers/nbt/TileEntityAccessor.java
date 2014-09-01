@@ -4,8 +4,8 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.concurrent.ConcurrentMap;
 
-import net.minecraft.server.v1_7_R3.NBTTagCompound;
-import net.minecraft.server.v1_7_R3.TileEntityChest;
+import net.minecraft.server.v1_7_R4.NBTTagCompound;
+import net.minecraft.server.v1_7_R4.TileEntityChest;
 import net.sf.cglib.asm.ClassReader;
 import net.sf.cglib.asm.MethodVisitor;
 import net.sf.cglib.asm.Opcodes;

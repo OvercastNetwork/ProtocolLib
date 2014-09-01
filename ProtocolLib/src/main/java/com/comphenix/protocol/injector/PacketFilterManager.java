@@ -20,6 +20,7 @@ package com.comphenix.protocol.injector;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
@@ -691,7 +692,7 @@ public final class PacketFilterManager implements ProtocolManager, ListenerInvok
 	@Override
 	public void broadcastServerPacket(PacketContainer packet) {
 		Preconditions.checkNotNull(packet, "packet cannot be NULL.");
-		broadcastServerPacket(packet, Arrays.asList(server.getOnlinePlayers()));
+		broadcastServerPacket(packet, server.getOnlinePlayers());
 	}
 
 	@Override
@@ -756,7 +757,7 @@ public final class PacketFilterManager implements ProtocolManager, ListenerInvok
 	 * @param packet - the packet to broadcast.
 	 * @param players - the iterable of players.
 	 */
-	private void broadcastServerPacket(PacketContainer packet, Iterable<Player> players) {
+	private void broadcastServerPacket(PacketContainer packet, Iterable<? extends Player> players) {
 		try {
 			for (Player player : players) {
 				sendServerPacket(player, packet);
@@ -951,7 +952,7 @@ public final class PacketFilterManager implements ProtocolManager, ListenerInvok
 	 * Initialize the packet injection for every player.
 	 * @param players - list of players to inject. 
 	 */
-	public void initializePlayers(Player[] players) {
+	public void initializePlayers(Collection<? extends Player> players) {
 		for (Player player : players)
 			playerInjection.injectPlayer(player, ConflictStrategy.OVERRIDE);
 	}
@@ -960,7 +961,7 @@ public final class PacketFilterManager implements ProtocolManager, ListenerInvok
 	 * Uninitialize the packet injection of every player.
 	 * @param players - list of players to uninject. 
 	 */
-	public void uninitializePlayers(Player[] players) {
+	public void uninitializePlayers(Collection<? extends Player> players) {
 		for (Player player : players) {
 			playerInjection.uninjectPlayer(player);
 		}

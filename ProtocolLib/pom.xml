@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.comphenix.protocol</groupId>
   <artifactId>ProtocolLib</artifactId>
-  <version>3.5.0-SNAPSHOT</version>
+  <version>3.5.1-SNAPSHOT</version>
   <packaging>jar</packaging>
   <description>Provides read/write access to the Minecraft protocol.</description>
   
@@ -11,18 +11,17 @@
     <powermock.version>1.5</powermock.version>
   </properties>
 
-  <distributionManagement>
-    <repository>
-      <id>comphenix-releases</id>
-      <name>Comphenix Maven Releases</name>
-      <url>http://repo.comphenix.net/content/repositories/releases/</url>
-    </repository>
-    <snapshotRepository>
-      <id>comphenix-snapshots</id>
-      <name>Comphenix Maven Snapshots</name>
-      <url>http://repo.comphenix.net/content/repositories/snapshots/</url>
-    </snapshotRepository>
-  </distributionManagement>
+    <!-- Deployment -->
+    <distributionManagement>
+        <repository>
+            <id>overcast-deployment</id>
+            <url>https://repo.oc.tc/content/repositories/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>overcast-deployment</id>
+            <url>https://repo.oc.tc/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
  
   <repositories>
     <repository>
@@ -231,8 +230,14 @@
   	</dependency>
   	<dependency>
   		<groupId>org.bukkit</groupId>
+  		<artifactId>bukkit</artifactId>
+  		<version>1.7.10-R0.1-SNAPSHOT</version>
+  		<scope>provided</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.bukkit</groupId>
   		<artifactId>craftbukkit</artifactId>
-  		<version>1.7.8-R0.1-SNAPSHOT</version>
+  		<version>1.7.10-R0.1-SNAPSHOT</version>
   		<scope>provided</scope>
   	</dependency>
   	<dependency>

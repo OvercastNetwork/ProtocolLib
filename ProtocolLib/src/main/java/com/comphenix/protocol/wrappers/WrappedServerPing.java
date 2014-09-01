@@ -258,7 +258,7 @@ public class WrappedServerPing extends AbstractWrapper {
 				// Recreate the count and maximum
 				Server server = Bukkit.getServer();
 				setPlayersMaximum(server.getMaxPlayers());
-				setPlayersOnline(server.getOnlinePlayers().length);
+				setPlayersOnline(server.getOnlinePlayers().size());
 			} else {
 				PLAYERS.set(handle, players = null);
 			}
